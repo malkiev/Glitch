@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] float health = 100f;
+    [SerializeField] GameObject deathVFX;
 
     public void DealDamage(float damage)
     {
@@ -12,7 +14,21 @@ public class Health : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            TriggerDeathVFX();
             Destroy(gameObject);
         }
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void TriggerDeathVFX()
+    {
+        if (!deathVFX)
+        { return; }
+
+        GameObject deathInstance = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(deathVFX, 1f);
+    }
+
 }

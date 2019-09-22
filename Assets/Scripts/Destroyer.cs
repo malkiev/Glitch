@@ -18,7 +18,7 @@ public class Destroyer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+        Debug.Log("Destroy " + col.gameObject.name);
         Destroy(col.gameObject);
     }
 }

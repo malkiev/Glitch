@@ -28,10 +28,14 @@ public class Projectile : MonoBehaviour
         Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
 
         Health health = col.GetComponent<Health>();
-        if (health != null)
+        Attacker attacker = col.GetComponent<Attacker>();
+
+        if (attacker && health)
         {
             health.DealDamage(damage);
+
+            //Destroy projectile
+            Destroy(gameObject);
         }
-        
     }
 }
