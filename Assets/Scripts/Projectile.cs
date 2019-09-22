@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
+    [SerializeField] float damage = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,22 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);
+    }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="col"></param>
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+
+        Health health = col.GetComponent<Health>();
+        if (health != null)
+        {
+            health.DealDamage(damage);
+        }
+        
     }
 }
