@@ -22,7 +22,7 @@ public class AttackerSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(lizard, transform.position, transform.rotation);
+        Attacker newAttacker = Instantiate(lizard, transform.position, transform.rotation, transform) as Attacker;
     }
 
     // Update is called once per frame
