@@ -65,20 +65,5 @@ public class DefenderSpawner : MonoBehaviour
         
     }
 
-    //private Boolean IsDefenderInPosition(Vector2 gridPos)
-    //{
-    //    Defender[] defenders = FindObjectsOfType<Defender>();
-    //    foreach (Defender defender in defenders)
-    //    {
-    //        bool sameY = Mathf.Abs(defender.transform.position.y - gridPos.y) <= Mathf.Epsilon;
-    //        bool sameX = Mathf.Abs(defender.transform.position.x - gridPos.x) <= Mathf.Epsilon;
 
-    //        if (sameX && sameY)
-    //        {
-    //            Debug.Log("Defender already here");
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
 }
