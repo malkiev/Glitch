@@ -15,6 +15,9 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             TriggerDeathVFX();
+
+            LevelController levelController = FindObjectOfType<LevelController>();
+
             Destroy(gameObject);
         }
     }

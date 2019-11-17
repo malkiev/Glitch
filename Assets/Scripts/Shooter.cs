@@ -35,13 +35,11 @@ public class Shooter : MonoBehaviour
     {
         if (IsAttackerInLane())
         {
-            Debug.Log("shoot");
             //TODO Change animation state to shooting
             animator.SetBool("IsAttacking", true);
         }
         else
         {
-            Debug.Log("idle");
             //TODO Change animation state to idle
             animator.SetBool("IsAttacking", false);
         }

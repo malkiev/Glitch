@@ -18,6 +18,8 @@ public class Destroyer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        FindObjectOfType<HealthDisplay>().ReduceHealth(10);
+
         Debug.Log("Destroy " + col.gameObject.name);
         Destroy(col.gameObject);
     }

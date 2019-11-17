@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AttackerSpawner : MonoBehaviour
 {
-    bool spawn = true;
+    [SerializeField] bool spawn = true;
     [SerializeField] float minSpawnTime = 1;
     [SerializeField] float maxSpawnTime = 5;
-    [SerializeField] Attacker lizard;
+    [SerializeField] Attacker[] attackerPrefabArray;
+
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -19,10 +20,20 @@ public class AttackerSpawner : MonoBehaviour
         }
     }
 
+    public void StopSpawning()
+    {
+        spawn = false;
+    }
 
     private void Spawn()
     {
-        Attacker newAttacker = Instantiate(lizard, transform.position, transform.rotation, transform) as Attacker;
+        if (!spawn)
+        {
+            return;
+        }
+
+        int index = Random.Range(0, attackerPrefabArray.Length);
+        Attacker newAttacker = Instantiate(attackerPrefabArray[index], transform.position, transform.rotation, transform) as Attacker;
     }
 
     // Update is called once per frame

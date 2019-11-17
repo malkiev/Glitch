@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6375b4285903ac4d88e05710cbf6adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 1
-  maxSpawnTime: 5
-  lizard: {fileID: 2116707746342333876, guid: 25eab805f171e1c4097030abd07180c1, type: 3}
+  minSpawnTime: 2
+  maxSpawnTime: 10
+  attackerPrefab:
+  - {fileID: 2116707746342333876, guid: 25eab805f171e1c4097030abd07180c1, type: 3}
+  - {fileID: 5788377675399706201, guid: 14c1e4d9a13e6de44bc32428af83ce1b, type: 3}
