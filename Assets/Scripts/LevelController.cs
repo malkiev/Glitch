@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] int attackersCount;
     [SerializeField] float timeToShowLevelComplete = 5;
     [SerializeField] GameObject winLabel;
+    [SerializeField] GameObject loseLabel;
     [SerializeField] AudioSource finishedLevelAudio;
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class LevelController : MonoBehaviour
     {
         timerExpired = false;
         winLabel.SetActive(false);
+        loseLabel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,6 +35,12 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(timeToShowLevelComplete);
 
         FindObjectOfType<LevelLoader>().LoadNextScene();
+    }
+
+    public void HandleLoseCondition()
+    {
+        loseLabel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void AddAttacker()

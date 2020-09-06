@@ -24,7 +24,11 @@ public class Attacker : MonoBehaviour
 
     void OnDestroy()
     {
-        FindObjectOfType<LevelController>().RemoveAttacker();
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if (levelController != null)
+        {
+            levelController.RemoveAttacker();
+        } 
     }
 
     private void UpdateAnimationState()

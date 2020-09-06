@@ -25,7 +25,8 @@ public class HealthDisplay : MonoBehaviour
     {
         if (damage > health)
         {
-            FindObjectOfType<LevelLoader>().LoadGameOver();
+            //FindObjectOfType<LevelLoader>().LoadGameOver();
+            FindObjectOfType<LevelController>().HandleLoseCondition();
             return;
         }
 
